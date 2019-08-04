@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h3>Giriş yap</h3>
+<hr>
+{% from "includes/formhelpers.html" import render_field %}
+<form method="post">
+  <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Giriş Paneli</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fas fa-envelope prefix grey-text"></i>
+         {{ render_field(form.username,class="form-control") }}
+          
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-lock prefix grey-text"></i>
+          {{ render_field(form.password,class="form-control") }}
+          </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default">Giriş</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <a href="" class="btn btn-primary" data-toggle="modal" data-target="#modalLoginForm">Oturum aç</a>
+</div>
+    
+</form>
+{% endblock body %}
